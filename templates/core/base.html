@@ -86,18 +86,18 @@
     let lastScrollY = window.scrollY; // Track the last scroll position
 
     window.addEventListener('scroll', () => {
-      if (window.scrollY > lastScrollY) {
+        if (window.scrollY > lastScrollY) {
         // Scrolling down - hide navbar
         nav.style.transform = 'translateY(-200px)'; // Move it up off the screen
-      } else {
+        } else {
         // Scrolling up - show navbar
         nav.style.transform = 'translateY(0)'; // Reset to visible position
-      }
-      lastScrollY = window.scrollY; // Update the last scroll position
+        }
+        lastScrollY = window.scrollY; // Update the last scroll position
     });
 
     // Add smooth transition to the navbar
     nav.style.transition = 'transform 0.3s ease-in-out';
-  </script>
+</script>
 
 </html>

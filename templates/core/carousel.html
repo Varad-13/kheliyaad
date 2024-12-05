@@ -1,0 +1,61 @@
+<div class="flex flex-col w-3/5 items-center justify-start gap-2">
+    <div class="flex gap-1 w-full h-full">
+        <style>
+            .c1, .c2, .c3 {
+                transition: width 0.2s ease, border-radius 0.2s ease; /* Smooth transition */
+                height: 100%;
+            }
+        </style>
+        <div id="c1" class="flex bg-blue-500 c1" style="width: 70%; border-radius: 6vw; aspect-ratio: 1/1;"></div>
+        <div id="c2" class="flex bg-blue-600 c2" style="width: 20%; border-radius: 4vw;"></div>
+        <div id="c3" class="flex bg-blue-700 c3" style="width: 10%; border-radius: 6vw;"></div>
+        <script>
+            const sections = {
+                c1: { width: "70%", radius: "6vw", aspect: 1/1 },
+                c2: { width: "20%", radius: "4vw" },
+                c3: { width: "10%", radius: "6vw" },
+            };
+
+            const elements = {
+                c1: document.getElementById("c1"),
+                c2: document.getElementById("c2"),
+                c3: document.getElementById("c3"),
+            };
+    
+            // Event listener for clicks
+            Object.keys(elements).forEach((id) => {
+                // Define the handler function
+                const handler = () => {
+                    if (id === "c1") {
+                        updateWidths("c1", "c2", "c3");
+                    } else if (id === "c2") {
+                        updateWidths("c2", "c3", "c1");
+                    } else {
+                        updateWidths("c3", "c2", "c1");
+                    }
+                };
+        
+                // Attach the event listeners for hover and tap
+                elements[id].addEventListener("mouseover", handler);
+                elements[id].addEventListener("touchstart", handler);
+            });
+    
+    
+            function updateWidths(selected, second, third) {
+                elements[selected].style.width = sections.c1.width;
+                elements[selected].style.borderRadius = sections.c1.radius;
+                elements[selected].style.aspectRatio = sections.c1.aspect;
+    
+                elements[second].style.width = sections.c2.width;
+                elements[second].style.borderRadius = sections.c2.radius;
+    
+                elements[third].style.width = sections.c3.width;
+                elements[third].style.borderRadius = sections.c3.radius;
+            }
+        </script>
+    </div>
+    <div class="self-end lg:hidden w-full h-2/5 items-center justify-center flex gap-4">
+        <a href="#" class="flex items-center justify-center button w-full h-16 rounded-full p-4 bg-blue-600 text-white text-center">CTA</a>
+        <a href="#" class="flex items-center justify-center button w-full h-16 rounded-full p-4 bg-blue-300 text-center">CTA 2</a>
+    </div>
+</div>
