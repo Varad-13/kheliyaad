@@ -1,1 +1,62 @@
 {% extends 'core/base.html'%}
+
+{% block content %}
+<div id="hero" class="flex flex-row w-full h-full justify-between gap-6">
+    <div class="flex flex-col w-2/5 gap-4 h-auto">
+        <div class="md:text-5xl xl:text-7xl font-serif">Event name</div>
+        <p class="text-base xl:text-xl 2xl:text-3xl mb-1">We motivate people of all class of society to break the mobile phone or other electronic gadgets addiction through sport so they can enjoy stress-free life.</p>
+        <p class="text-base xl:text-xl 2xl:text-3xl mb-1">Sports and Physical activities play a crucial role in our life. It is not only important for kids but also for adults.</p>
+        <p class="text-base xl:text-xl 2xl:text-3xl mb-1">For balancing digital life and real-life reversing screen addiction is very important. The more we invest in our phones, the more we divert from our well-being. Every moment spent on your phone steals the richness of real-life experiences. we don’t even realize how much time we’re wasting on our phones. We will help you get started on your path to recovery, so come join us.</p>
+        <div class="hidden w-full items-center justify-center gap-4 lg:flex text-2xl mt-2 px-5">
+            <a href="#" class="flex items-center justify-center button w-full rounded-full p-4 bg-blue-600 text-white text-center">Join Us</a>
+            <a href="#" class="flex items-center justify-center button w-full rounded-full p-4 bg-blue-300 text-center">CTA 2</a>
+        </div>
+    </div> 
+    {% include 'core/carousel.html' %}    
+</div>
+<div id="sponsor" class="flex w-full h-64 p-4 gap-2">
+    <div class="flex aspect-video w-full bg-blue-300 rounded-4xl items-center justify-center">Sponsor 1</div>
+    <div class="flex aspect-video w-full bg-blue-300 rounded-4xl items-center justify-center">Sponsor 2</div>
+    <div class="flex aspect-video w-full bg-blue-300 rounded-4xl items-center justify-center">Sponsor 3</div>
+    <div class="flex aspect-video w-full bg-blue-300 rounded-4xl items-center justify-center">Sponsor 4</div>
+    <div class="flex aspect-video w-full bg-blue-300 rounded-4xl items-center justify-center">Sponsor 5</div>
+</div>
+<div class="flex flex-col w-full text-xl p-8 rounded-4xl items-center gap-4">
+    <div class="flex flex-col w-full flex-shrink-0 text-2xl">
+        <p class="w-full text-center font-serif font-semibold text-5xl mb-3">Why Choose Us</p>
+        {% include 'core/accordion.html' %}    
+    </div>
+    <div class="flex flex-row gap-1 xl:w-4/5 w-full">
+        <div class="flex w-full aspect-square bg-blue-300 rounded-4xl items-center">a</div>
+        <div class="flex w-full aspect-square bg-blue-300 rounded-4xl items-center">a</div>
+        <div class="flex w-full aspect-square bg-blue-300 rounded-4xl items-center">a</div>
+    </div>
+</div>
+<div class="grid grid-cols-8 w-full gap-1">
+    <div class="flex flex-col row-span-3 col-span-3 gap-1">
+        <div class="blog w-full bg-blue-300 rounded-4xl"></div>
+        <div class="blog w-full bg-blue-300 rounded-4xl"></div>
+        <div class="blog w-full bg-blue-300 rounded-4xl"></div>
+    </div>
+    <div class="flex flex-row row-span-3 col-span-3 gap-1">
+        <div class="flex flex-col h-full w-1/2 gap-1">
+            <div class="aspect-square w-full bg-blue-300 rounded-4xl"></div>
+            <div class="aspect-square w-full bg-blue-300 rounded-4xl"></div>
+            <div class="aspect-square w-full bg-blue-300 rounded-4xl"></div>
+        </div>
+        <div class="flex flex-col h-full w-1/2 gap-1">
+            <div class="aspect-square w-full bg-blue-300 rounded-4xl"></div>
+            <div class="aspect-square w-full bg-blue-300 rounded-4xl"></div>
+            <div class="aspect-square w-full bg-blue-300 rounded-4xl"></div>
+        </div>                
+    </div>
+    <div class="flex flex-col row-span-3 col-span-2 gap-1">
+        <div class="video w-full bg-blue-300 rounded-4xl"></div>
+        <div class="video w-full bg-blue-300 rounded-4xl"></div>
+        <div class="video w-full bg-blue-300 rounded-4xl"></div>
+    </div>  
+</div>
+<div id="testimonials" class="flex rounded-4xl w-full h-96 bg-violet-900">
+
+</div>
+{% endblock %}

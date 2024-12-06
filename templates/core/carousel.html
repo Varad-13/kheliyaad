@@ -1,17 +1,17 @@
 <div class="flex flex-col w-3/5 items-center justify-start gap-2">
-    <div class="flex gap-1 w-full h-full">
+    <div class="flex gap-1 w-full h-full h-3/5">
         <style>
             .c1, .c2, .c3 {
                 transition: width 0.2s ease, border-radius 0.2s ease; /* Smooth transition */
                 height: 100%;
             }
         </style>
-        <div id="c1" class="flex bg-blue-500 c1 shadow-xl" style="width: 70%; border-radius: 6vw; aspect-ratio: 1/1; background-image: url(https://kheliyaad.com/wp-content/uploads/2024/08/1-2-1.jpg); background-position: center; background-size: cover;"></div>
+        <div id="c1" class="flex bg-blue-500 c1 shadow-xl" style="width: 70%; border-radius: 6vw; background-image: url(https://kheliyaad.com/wp-content/uploads/2024/08/1-2-1.jpg); background-position: center; background-size: cover;"></div>
         <div id="c2" class="flex bg-blue-600 c2 shadow-xl" style="width: 20%; border-radius: 4vw; background-image: url(https://kheliyaad.com/wp-content/uploads/2019/12/maxresdefault-1-1.jpg); background-position: center; background-size: cover;" ></div>
         <div id="c3" class="flex bg-blue-700 c3 shadow-xl" style="width: 10%; border-radius: 6vw; background-image: url(https://kheliyaad.com/wp-content/uploads/2019/12/img_0030-1.jpg); background-position: center; background-size: cover;"></div>
         <script>
             const sections = {
-                c1: { width: "70%", radius: "6vw", aspect: 1/1 },
+                c1: { width: "70%", radius: "6vw" },
                 c2: { width: "20%", radius: "4vw" },
                 c3: { width: "10%", radius: "6vw" },
             };
@@ -55,7 +55,7 @@
         </script>
     </div>
     <div class="self-end lg:hidden w-full h-2/5 items-center justify-center flex gap-4">
-        <a href="#" class="flex items-center justify-center button w-full h-16 rounded-full p-4 bg-blue-600 text-white text-center">CTA</a>
+        <a href="#" class="flex items-center justify-center button w-full h-16 rounded-full p-4 bg-blue-600 text-white text-center">Join Us</a>
         <a href="#" class="flex items-center justify-center button w-full h-16 rounded-full p-4 bg-blue-300 text-center">CTA 2</a>
     </div>
 </div>
