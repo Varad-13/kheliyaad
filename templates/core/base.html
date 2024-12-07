@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <style>
         .rounded-6xl {
             border-radius: 4vw;
@@ -67,6 +67,9 @@
         .nav {
             z-index: 100;
         }
+        .nav_mob {
+            z-index: 99;
+        }
     </style>
 </head>
 
@@ -87,14 +90,35 @@
                 <a href="{% url 'login' %}" class="hover:underline">Login</a>
                 {% endif %}
             </div>
-            <div class="nav-item flex px-6 text-center items-center gap-6 font-medium lg:text-xl md:hidden text-black dark:text-white">
+            <button id="hamburger" onclick="toggleNav()" class="nav-item flex px-6 text-center items-center gap-6 font-medium lg:text-xl md:hidden text-black dark:text-white">
                 <span class="material-symbols-outlined">
                     menu
                 </span>
-            </div>
+            </button>
+            <button id="close" onclick="toggleNav()" class="nav-item flex px-6 text-center items-center gap-6 font-medium lg:text-xl hidden md:hidden text-black dark:text-white">
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+            </button>
         </nav>
-        <div class="h-16 md:h-8">
-
+        <div id="nav_mobile" class="nav_mob flex flex-col gap-8 w-full h-full hidden md:hidden fixed top-0 backdrop-blur-md bg-gray-200/60 dark:bg-gray-900/80">
+            <div class="h-16 flex items-end">
+            
+            </div>
+            <div class="flex flex-col px-10 text-left items-start gap-6 font-medium text-xl text-black dark:text-white">
+                <a href="{% url 'home' %}" class="hover:underline">Home</a>
+                <a href="#" class="hover:underline">Blog</a>
+                <a href="#" class="hover:underline">Gallery</a>
+                <a href="#" class="hover:underline">About Us</a>
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="hover:underline">Log Out</a>
+                {% else %}
+                <a href="{% url 'login' %}" class="hover:underline">Login</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="h-16 md:h-8 flex items-end">
+            
         </div>
         {% for message in messages %}
             {% if message.tags == "error" %}
@@ -109,7 +133,6 @@
                 <p class="text-gray-700 dark:text-gray-400 mb-6 text-center">{{ message }}</p>
             {% endif %}
         {% endfor %}
-
         {% block content %}{% endblock %}
         
         <div></div>
@@ -134,6 +157,23 @@
 
     // Add smooth transition to the navbar
     nav.style.transition = 'transform 0.3s ease-in-out';
+</script>
+
+<script>
+    const navmob = document.querySelector('#nav_mobile'); // Use the correct selector, '.' for class
+    const hamburger = document.querySelector("#hamburger");
+    const close_but = document.querySelector("#close");
+    function toggleNav() {
+        if (navmob.classList.contains('hidden')) { // Check if it has the class 'hidden'
+            navmob.classList.remove('hidden');
+            hamburger.classList.add('hidden');
+            close_but.classList.remove('hidden');
+        } else {
+            navmob.classList.add('hidden'); // Add 'hidden' if not present
+            hamburger.classList.remove('hidden');
+            close_but.classList.add('hidden');
+        }
+    }
 </script>
 
 <script>

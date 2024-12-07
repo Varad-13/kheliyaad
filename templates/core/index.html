@@ -9,10 +9,10 @@
 </video>
 <div id="hero" class="flex md:flex-row flex-col-reverse w-full h-full justify-between gap-6 p-2" style="background-image: url();">
     <div class="flex flex-col md:w-2/5 gap-4 h-auto text-gray-600 dark:text-gray-300">
-        <p class="text-2xl md:text-4xl xl:text-5xl font-light text-gray-700 dark:text-gray-200 leading-10"><span class="text-blue-600 dark:text-blue-400 font-medium md:text-5xl">Kheliyaad</span> is an Institution which preserves the <span class="text-blue-600 dark:text-blue-400 font-medium md:text-5xl">status of people</span> in society by developing <span class="text-blue-600 dark:text-blue-400 font-medium md:text-5xl">Mental, Physical</span> as well as <span class="text-blue-600 dark:text-blue-400 font-medium md:text-5xl">Social spirit</span> and take them in the direction of good health.</p>
+        <p class="text-2xl md:text-4xl xl:text-5xl font-light text-gray-700 dark:text-gray-200 leading-10"><span class="text-blue-600 dark:text-blue-400 font-medium">Kheliyaad</span> is an Institution which preserves the <span class="text-blue-600 dark:text-blue-400 font-medium">status of people</span> in society by developing <span class="text-blue-600 dark:text-blue-400 font-medium">Mental, Physical</span> as well as <span class="text-blue-600 dark:text-blue-400 font-medium">Social spirit</span> and take them in the direction of good health.</p>
             <div class="hidden w-full items-center justify-center gap-4 lg:flex text-xl mt-2 2xl:px-8">
-            <a href="#" class="flex items-center justify-center button w-full rounded-full px-4 py-2 bg-blue-600 text-white text-center border border-2 border-blue-600 transition duration-700 ease-in-out hover:dark:border-blue-400 hover:bg-transparent hover:backdrop-blur-sm hover:text-blue-600 hover:dark:text-blue-200">Join Us</a>
-            <a href="#" class="flex items-center justify-center button w-full rounded-full px-4 py-2 text-center border border-2 border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-200 bg-transparent backdrop-blur-md transition duration-700 ease-in-out hover:bg-blue-600 hover:border-blue-600 hover:text-white">Learn More</a>
+            <a href="#" class="flex items-center justify-center button w-full rounded-full px-4 py-2 bg-blue-600 text-white text-center border border-2 border-blue-600 transition duration-700 ease-in-out hover:bg-blue-700 hover:border-blue-700 hover:backdrop-blur-sm">Join Us</a>
+            <a href="#join" class="flex items-center justify-center button w-full rounded-full px-4 py-2 text-center border border-2 border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-200 bg-transparent backdrop-blur-md transition duration-700 ease-in-out hover:bg-blue-600 hover:border-blue-600 hover:text-white">Learn More</a>
         </div>
     </div> 
     {% include 'core/carousel.html' %}    
@@ -31,8 +31,8 @@
 <div class="flex flex-col w-full text-xl items-center gap-4 ">
     <p class="w-full text-center font-serif-noto text-3xl md:text-5xl mb-3">Blogs & Gallery</p>
     <div class="flex md:flex-row flex-col-reverse w-full flex-shrink-0 text-base xl:text-xl gap-4">
-        <div class="flex md:w-1/2 items-center justify-center h-96 bg-blue-500 rounded-3xl shadow-lg overflow-hidden bg-cover bg-center" style="background-image: url('https://kheliyaad.com/wp-content/uploads/2019/12/img_0030-1.jpg');">
-            <div class="p-4 bg-gray-900/50 w-full self-end backdrop-blur-sm hover:bg-gray-700 hover:cursor-pointer">
+        <div class="flex md:w-1/2 items-center justify-center h-96 bg-blue-500 rounded-3xl shadow-lg overflow-hidden bg-cover bg-center hover:cursor-pointer" style="background-image: url('https://kheliyaad.com/wp-content/uploads/2019/12/img_0030-1.jpg');">
+            <div class="p-4 bg-gray-900/50 w-full self-end backdrop-blur-sm">
               <h2 class="text-xl font-semibold text-white mb-2">Blog Title</h2>
               <p class="text-gray-100 text-sm">
                 This is a short description or excerpt of the blog. Click the button below to read more.
@@ -51,13 +51,15 @@
     </div>
 </div>
 
-<div class="flex flex-col w-full text-xl items-center gap-4">
+<div id="join" class="flex flex-col w-full text-xl items-center gap-4">
     <div class="flex flex-col w-full flex-shrink-0 text-base xl:text-xl">
         <p class="w-full text-center font-serif-noto text-3xl md:text-5xl mb-3">Why Join Us</p>
         {% include 'core/accordion.html' %}    
     </div>
 </div>
 
-{% include 'core/benefits.html' %}
+<div class="flex flex-col w-full text-xl items-center gap-4">
+    {% include 'core/benefits.html' %}
+</div>
 
 {% endblock %}
