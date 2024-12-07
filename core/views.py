@@ -1,27 +1,28 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.views import View
 from .models import *
 # Create your views here.
 
-def home(request):
+def Home(request):
     return render(request, 'core/index.html')
 
-class login(View):
+class Login(View):
     def get(self, request):
         if request.user.is_authenticated:
-            return redirect(home)
+            return redirect("home")
         else:
             return render(request, 'core/login.html')
     def post(self, request):
-        email = request.POST.get("username")
+        email = request.POST.get("email")
         password = request.POST.get("password")
         auth = authenticate(request, username=email, password=password)
 
         if auth is not None:
             login(request, auth)
-            return redirect(home)
+            messages.success(request, "You have successfully logged in.")
+            return redirect("home")
         
         else:
             if not User.objects.filter(email=email).exists():
@@ -30,3 +31,71 @@ class login(View):
                 messages.error(request, "Incorrect password. Please try again.")
 
         return render(request, 'core/login.html')
+    
+class Logout(View):
+    def get(self, request):
+        if request.user.is_authenticated:
+            logout(request)
+            messages.success(request, "You have successfully logged out.")
+        else:
+            messages.warning(request, "You are not logged in.")
+        return redirect("login")
+
+class Signup(View):
+    def get(self, request):
+        if request.user.is_authenticated:
+            return redirect('home')
+        return render(request, 'core/signup.html')
+
+    def post(self, request):
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+        fname = request.POST.get("fname")
+        lname = request.POST.get("lname")
+        phone = request.POST.get("phone")
+        address = request.POST.get("address")
+        city = request.POST.get("city")
+        state = request.POST.get("state")
+        pincode = request.POST.get("pincode")
+
+        # Check if email is already registered
+        if User.objects.filter(email=email).exists():
+            messages.error(request, "Email address is already in use.")
+            return render(request, 'core/signup.html')
+
+        # Password validation
+        if len(password) < 8:
+            messages.error(request, "Password must be at least 8 characters long.")
+            return render(request, 'core/signup.html')
+        if not any(char.isdigit() for char in password):
+            messages.error(request, "Password must contain at least one number.")
+            return render(request, 'core/signup.html')
+        if not any(char.isalpha() for char in password):
+            messages.error(request, "Password must contain at least one letter.")
+            return render(request, 'core/signup.html')
+
+        # Create User and UserProfile
+        try:
+            user = User.objects.create_user(
+                username=email,
+                email=email,
+                password=password,
+                first_name=fname,
+                last_name=lname
+            )
+            UserProfile.objects.create(
+                user=user,
+                fname=fname,
+                lname=lname,
+                phone=phone,
+                address=address,
+                city=city,
+                state=state,
+                pincode=pincode
+            )
+            login(request, user)  # Log in the user after signup
+            messages.success(request, "Account created successfully!")
+            return redirect('home')
+        except Exception as e:
+            messages.error(request, f"An error occurred: {e}")
+            return render(request, 'core/signup.html')
