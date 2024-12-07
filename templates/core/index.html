@@ -1,7 +1,7 @@
 {% extends 'core/base.html'%}
 
 {% block content %}
-<div id="hero" class="flex md:flex-row flex-col w-full h-full justify-between gap-6">
+<div id="hero" class="flex md:flex-row flex-col w-full h-full justify-between gap-6" style="background-image: url();">
     <div class="flex flex-col w-2/5 gap-4 h-auto text-gray-600 dark:text-gray-300">
         <div class="md:text-4xl xl:text-5xl font-serif-noto text-gray-700 dark:text-gray-200"><span class="text-blue-600 dark:text-blue-400 font-bold text-6xl">Kheliyaad</span> is an Institution which preserves the status of people in society by developing Mental, Physical as well as Social spirit and take them in the direction of good health.</div>
         <div class="hidden w-full items-center justify-center gap-4 lg:flex text-xl mt-2 2xl:px-8">
@@ -33,8 +33,14 @@
             </div>
           </div>
           
-        <div class="flex w-1/2 items-center justify-center h-96 bg-blue-500 rounded-3xl shadow-lg overflow-hidden bg-cover bg-center">
-            
+        <div class="flex w-1/2 h-96 grid grid-cols-3 gap-1 ">
+            <div class="bg-blue-700 rounded-3xl hover:cursor-pointer hover:ring-2 hover:ring-blue-500 bg-cover bg-center" style="background-image: url(https://kheliyaad.com/wp-content/uploads/2019/12/Gulli-Danda-510x287.jpg);"></div>
+            <div class="bg-blue-700 rounded-3xl hover:cursor-pointer hover:ring-2 hover:ring-blue-500 bg-cover bg-center" style="background-image: url(https://kheliyaad.com/wp-content/uploads/2019/12/Girls-kabaddi-India-510x338.jpg);"></div>
+            <div class="bg-blue-700 rounded-3xl hover:cursor-pointer hover:ring-2 hover:ring-blue-500 bg-cover bg-center" style="background-image: url(https://kheliyaad.com/wp-content/uploads/2019/12/kho-kho-510x268.jpg);"></div>
+            <div class="bg-blue-700 rounded-3xl hover:cursor-pointer hover:ring-2 hover:ring-blue-500 bg-cover bg-center" style="background-image: url(https://kheliyaad.com/wp-content/uploads/2019/12/hopscotch-hp-orig-510x340.jpg);"></div>
+            <div class="bg-blue-700 rounded-3xl hover:cursor-pointer hover:ring-2 hover:ring-blue-500 bg-cover bg-center" style="background-image: url(https://kheliyaad.com/wp-content/uploads/2019/12/ITGF-sack-race-510x229.jpg);"></div>
+            <div class="bg-blue-700 rounded-3xl hover:cursor-pointer hover:ring-2 hover:ring-blue-500 bg-cover bg-center" style="background-image: url(https://kheliyaad.com/wp-content/uploads/2019/12/maxresdefault-1-510x287.jpg);"></div>
+
         </div>
     </div>
 </div>
@@ -46,6 +52,6 @@
     </div>
 </div>
 
-
+{% include 'core/benefits.html' %}
 
 {% endblock %}
