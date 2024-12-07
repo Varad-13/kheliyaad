@@ -1,14 +1,14 @@
-<div class="flex flex-col w-3/5 items-center justify-start gap-2">
-    <div class="flex gap-1 w-full h-full h-3/5">
+<div class="flex flex-col md:w-3/5 items-center justify-start gap-2">
+    <div class="flex gap-1 w-full h-full min-h-64 h-3/5">
         <style>
             .c1, .c2, .c3 {
                 transition: width 1s ease, border-radius 1s ease; /* Smooth transition */
                 height: 100%;
             }
         </style>
-        <div id="c1" class="flex bg-blue-500 c1 shadow-xl" style="width: 70%; border-radius: 4vw; background-image: url(https://kheliyaad.com/wp-content/uploads/2024/08/1-2-1.jpg); background-position: center; background-size: cover;"></div>
-        <div id="c2" class="flex bg-blue-600 c2 shadow-xl" style="width: 20%; border-radius: 2vw; background-image: url(https://kheliyaad.com/wp-content/uploads/2019/12/maxresdefault-1-1.jpg); background-position: center; background-size: cover;" ></div>
-        <div id="c3" class="flex bg-blue-700 c3 shadow-xl" style="width: 10%; border-radius: 4vw; background-image: url(https://kheliyaad.com/wp-content/uploads/2019/12/img_0030-1.jpg); background-position: center; background-size: cover;"></div>
+        <div id="c1" class="flex bg-blue-500 c1 shadow-xl h-full min-h-64" style="width: 70%; border-radius: 4vw; background-image: url(https://kheliyaad.com/wp-content/uploads/2024/08/1-2-1.jpg); background-position: center; background-size: cover;"></div>
+        <div id="c2" class="flex bg-blue-600 c2 shadow-xl h-full min-h-64" style="width: 20%; border-radius: 2vw; background-image: url(https://kheliyaad.com/wp-content/uploads/2019/12/maxresdefault-1-1.jpg); background-position: center; background-size: cover;" ></div>
+        <div id="c3" class="flex bg-blue-700 c3 shadow-xl h-full min-h-64" style="width: 10%; border-radius: 4vw; background-image: url(https://kheliyaad.com/wp-content/uploads/2019/12/img_0030-1.jpg); background-position: center; background-size: cover;"></div>
         <script>
             const sections = {
                 c1: { width: "70%", radius: "4vw" },
@@ -55,7 +55,7 @@
         </script>
     </div>
 
-    <div class="self-end lg:hidden w-full h-2/5 items-center justify-center flex gap-4 px-8">
+    <div class="self-end lg:hidden w-full h-2/5 items-center justify-center flex gap-4 md:px-8">
         <a href="#" class="flex items-center justify-center button w-full rounded-full px-4 py-2 bg-blue-600 text-white text-center border border-2 border-blue-600">Join Us</a>
         <a href="#" class="flex items-center justify-center button w-full rounded-full px-4 py-2 text-center text-blue-600 border border-2 border-blue-600 dark:text-blue-400 dark:border-blue-400">Learn More</a>
     </div>
