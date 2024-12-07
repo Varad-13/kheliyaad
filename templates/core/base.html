@@ -8,13 +8,16 @@
 
     <!-- Include Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital@0;1&display=swap" rel="stylesheet">
 
     <style>
         .rounded-6xl {
-            border-radius: 6vw;
+            border-radius: 4vw;
         }
         .rounded-4xl {
-            border-radius: 4vw;
+            border-radius: 2vw;
         }
         .blog {
             aspect-ratio: 2/1;
@@ -23,16 +26,42 @@
         .video{
             aspect-ratio: 4/3;
         }
+        /* width */
+        ::-webkit-scrollbar {
+               width: 5px; 
+               height: 5px;
+            }
+            
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 2px;
+        }
+        .font-sans-noto{
+            font-family: "Noto Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-variation-settings:
+                "wdth" 100;
+        }
+
+        .font-serif-noto {
+            font-family: "Noto Serif", serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-variation-settings:
+                "wdth" 100;
+            }
     </style>
 </head>
 
-<body class="bg-gray-200 font-sans antialiased">
-    <div class="flex flex-col min-h-screen h-full items-center gap-10 md:px-8 lg:px-16">
+<body class="dark:bg-gray-900 font-sans-noto dark:text-white">
+    <div class="flex flex-col min-h-screen h-full items-center gap-24 justify-self-center max-w-7xl px-4">
         <nav class="flex bg-blue-500/75 justify-between backdrop-blur-md text-white w-full max-w-2xl lg:max-w-3xl xl:max-w-4xl rounded-full fixed top-2">
             <div class="nav-item flex px-10 self-start">
                 <img class="w-36 h-auto object-cover lg:w-48" src="https://res.cloudinary.com/dej3owk7z/image/upload/v1733460651/m1gx89g18zcmtw3pzfve.png">
             </div>
-            <div class="nav-item flex px-10 text-center items-center gap-6 font-serif lg:text-xl">
+            <div class="nav-item flex px-10 text-center items-center gap-6 font-medium lg:text-xl">
                 <a href="#" class="hover:underline">Home</a>
                 <a href="#" class="hover:underline">Blog</a>
                 <a href="#" class="hover:underline">Gallery</a>
@@ -40,15 +69,16 @@
                 <a href="#" class="hover:underline">Login</a>
             </div>
         </nav>
-        <div class="h-24">
+        <div class="h-8">
 
         </div>
 
         {% block content %}{% endblock %}
         
         <div></div>
+        <footer></footer>
     </div>
-    <footer></footer>
+    
 </body>
 <script>
     const nav = document.querySelector('nav'); // Select the navbar
@@ -67,6 +97,10 @@
 
     // Add smooth transition to the navbar
     nav.style.transition = 'transform 0.3s ease-in-out';
+</script>
+
+<script>
+    
 </script>
 
 </html>
