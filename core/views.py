@@ -1,4 +1,5 @@
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.hashers import make_password
+from django.contrib.auth import authenticate, login, logout, password_validation
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.views import View
@@ -50,6 +51,7 @@ class Signup(View):
     def post(self, request):
         email = request.POST.get("email")
         password = request.POST.get("password")
+        confirm_password = request.POST.get("confirm_password")
         fname = request.POST.get("fname")
         lname = request.POST.get("lname")
         phone = request.POST.get("phone")
@@ -63,15 +65,16 @@ class Signup(View):
             messages.error(request, "Email address is already in use.")
             return render(request, 'core/signup.html')
 
+        if confirm_password != password:
+            messages.error(request, "Passwords do not match.")
+            return render(request, 'core/signup.html')
+
         # Password validation
-        if len(password) < 8:
-            messages.error(request, "Password must be at least 8 characters long.")
-            return render(request, 'core/signup.html')
-        if not any(char.isdigit() for char in password):
-            messages.error(request, "Password must contain at least one number.")
-            return render(request, 'core/signup.html')
-        if not any(char.isalpha() for char in password):
-            messages.error(request, "Password must contain at least one letter.")
+        try:
+            password_validation.validate_password(password=password)
+        except ValidationError as e:
+            for error in e.messages:
+                messages.error(request, error)
             return render(request, 'core/signup.html')
 
         # Create User and UserProfile
@@ -79,7 +82,7 @@ class Signup(View):
             user = User.objects.create_user(
                 username=email,
                 email=email,
-                password=password,
+                password=make_password(password),
                 first_name=fname,
                 last_name=lname
             )
