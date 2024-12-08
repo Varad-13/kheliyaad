@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head class="dark">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %} Kheliyaad</title>
@@ -70,12 +70,15 @@
         .nav_mob {
             z-index: 99;
         }
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 
 <body class="flex w-screen justify-center dark:bg-gray-950 bg-gray-50 font-sans-noto dark:text-white">
     <div class="flex flex-col min-h-screen h-full w-full items-center justify-start gap-8 md:gap-24 max-w-7xl px-4" >
-        <nav class="nav flex self-center justify-self-center justify-between backdrop-blur-md text-white w-full xs:max-w-xs md:max-w-2xl lg:max-w-3xl xl:max-w-4xl md:rounded-full fixed bg-transparent border-gray-500 md:border-2 top-0 md:top-2 md:p-0 md:px-4 p-4">
+        <nav class="nav flex self-center justify-self-center justify-between backdrop-blur-md text-white w-full xs:max-w-xs md:max-w-2xl lg:max-w-3xl xl:max-w-4xl md:rounded-full fixed bg-blue-500/60 border-gray-500 md:border-2 top-0 md:top-2 md:p-0 md:px-4 p-4">
             <div class="nav-item flex px-4 md:px-6 self-start invert dark:invert-0">
                 <img class="w-36 h-auto object-cover lg:w-48" src="https://res.cloudinary.com/dej3owk7z/image/upload/v1733460651/m1gx89g18zcmtw3pzfve.png">
             </div>
