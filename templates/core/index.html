@@ -1,10 +1,10 @@
 {% extends 'core/base.html'%}
 
 {% block content %}
-<video class="myVideo hidden dark:block opacity-75 md:opacity-25" autoplay muted loop>
+<video class="backdrop hidden dark:block opacity-75 md:opacity-25" autoplay muted loop>
     <source src="https://res.cloudinary.com/dej3owk7z/video/upload/v1733588621/Animated_Liquid_Gradient_Background_4_ukczbs.mp4" type="video/mp4">
 </video>
-<video class="myVideo dark:hidden opacity-75 md:opacity-25" autoplay muted loop>
+<video class="backdrop dark:hidden opacity-75 md:opacity-25" autoplay muted loop>
     <source src="https://res.cloudinary.com/dej3owk7z/video/upload/v1733591083/Animated_Liquid_Gradient_Background_4-negate_njvnp2.mp4" type="video/mp4">
 </video>
 <div id="hero" class="flex md:flex-row flex-col-reverse w-full h-full justify-between gap-6 p-2" style="background-image: url();">
@@ -18,7 +18,7 @@
     {% include 'core/carousel.html' %}    
 </div>
 
-<div class="flex w-full overflow-x-auto gap-4 p-2 justify-start grayscale ">
+<div class="flex w-full overflow-x-auto gap-4 p-2 justify-start grayscale hidden">
     <img class="w-48" src="https://kheliyaad.com/wp-content/uploads/2024/08/sponsor-sample.png">
     <img class="w-48" src="https://kheliyaad.com/wp-content/uploads/2024/08/sponsor-sample.png">
     <img class="w-48" src="https://kheliyaad.com/wp-content/uploads/2024/08/sponsor-sample.png">
