@@ -1,9 +1,3 @@
-<!-- templates/partials/meta.html -->
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{% block title %}{% endblock %}</title>
-
 <!-- Basic SEO Meta Tags -->
 <meta name="description" content="{% block description %}{% endblock %}">
 
@@ -26,6 +20,3 @@
 <meta name="twitter:title" content="{% block twitter_title %}{% endblock %}">
 <meta name="twitter:description" content="{% block twitter_description %}{% endblock %}">
 <meta name="twitter:image" content="{% block twitter_image %}{% static 'images/twitter-image.jpg' %}{% endblock %}">
-
-<!-- Canonical Link (for duplicate content issues) -->
-<link rel="canonical" href="{% block canonical_url %}{{ request.build_absolute_uri }}{% endblock %}">

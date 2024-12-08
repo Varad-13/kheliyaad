@@ -1,4 +1,4 @@
-{% extends 'core/base.html'%}
+{% extends 'base.html'%}
 
 {% block content %}
 <video class="backdrop hidden dark:block opacity-75 md:opacity-25" autoplay muted loop>
@@ -15,7 +15,7 @@
             <a href="#join" class="flex items-center justify-center button w-full rounded-full px-4 py-2 text-center border border-2 border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-200 bg-transparent backdrop-blur-md transition duration-700 ease-in-out hover:bg-blue-600 hover:border-blue-600 hover:text-white">Learn More</a>
         </div>
     </div> 
-    {% include 'core/carousel.html' %}    
+    {% include 'landing/carousel.html' %}    
 </div>
 
 <div class="flex w-full overflow-x-auto gap-4 p-2 justify-start grayscale hidden">
@@ -54,12 +54,12 @@
 <div id="join" class="flex flex-col w-full text-xl items-center gap-4">
     <div class="flex flex-col w-full flex-shrink-0 text-base xl:text-xl">
         <p class="w-full text-center font-serif-noto text-3xl md:text-5xl mb-3">Why Join Us</p>
-        {% include 'core/accordion.html' %}    
+        {% include 'landing/accordion.html' %}    
     </div>
 </div>
 
 <div class="flex flex-col w-full text-xl items-center gap-4">
-    {% include 'core/benefits.html' %}
+    {% include 'landing/benefits.html' %}
 </div>
 
 {% endblock %}
