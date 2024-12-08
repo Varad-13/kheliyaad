@@ -75,6 +75,7 @@
             scroll-behavior: smooth;
         }
     </style>
+    {% block extra_head %}{% endblock %}
 </head>
 
 <body class="flex w-full max-w-screen justify-center dark:bg-gray-950 bg-gray-50 font-sans-noto dark:text-white">
@@ -181,7 +182,7 @@
 </script>
 
 <script>
-    
+    {% block extra_scripts %}{% endblock %}
 </script>
 
 </html>

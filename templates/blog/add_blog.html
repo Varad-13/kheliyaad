@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Blog{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl w-full bg-blue-50 p-8 shadow-md rounded-3xl border-2 border-gray-500 text-gray-600">
+    <form action="{% url 'add_blog' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <!-- Thumbnail -->
+        <div class="mb-4">
+            <label for="thumbnail" class="block text-sm font-medium text-gray-700">Thumbnail</label>
+            <input 
+                id="thumbnail" 
+                name="thumbnail" 
+                type="file" 
+                accept="image/*" 
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 text-gray-700 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            />
+        </div>
+
+        <!-- Title -->
+        <div class="mb-4">
+            <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+            <input 
+                id="title" 
+                name="title" 
+                type="text" 
+                required 
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                placeholder="Enter the blog title"
+            />
+        </div>
+
+        <!-- Summary -->
+        <div class="mb-4">
+            <label for="summary" class="block text-sm font-medium text-gray-700">Summary</label>
+            <textarea 
+                id="summary" 
+                name="summary" 
+                rows="2" 
+                required 
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                placeholder="Enter a brief summary of the blog"
+            ></textarea>
+        </div>
+
+        <!-- Tags -->
+        <div class="mb-4">
+            <label for="tags" class="block text-sm font-medium text-gray-700">Tags</label>
+            
+            <!-- Existing Tags as Checkboxes -->
+            <div class="mt-2">
+                {% for tag in tags %}
+                    <label class="inline-flex items-center">
+                        <input 
+                            type="checkbox" 
+                            name="tags" 
+                            value="{{ tag.id }}" 
+                            class="form-checkbox text-blue-500"
+                        />
+                        <span class="ml-2">{{ tag.name }}</span>
+                    </label>
+                    <br>
+                {% endfor %}
+            </div>
+            
+            <p class="text-sm text-gray-500 mt-1">Select existing tags or add new ones.</p>
+        
+            <!-- Input for Custom Tags -->
+            <label for="custom_tags" class="block text-sm font-medium text-gray-700 mt-4">Custom Tags (comma separated)</label>
+            <input 
+                id="custom_tags" 
+                name="custom_tags" 
+                type="text" 
+                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                placeholder="Enter custom tags"
+            />
+        </div>
+
+        <!-- Content -->
+        <div class="mb-4">
+            <label for="body" class="block text-sm font-medium text-gray-700">Content</label>
+            <textarea 
+                id="body" 
+                name="body" 
+                required 
+                class="mt-1 block w-full h-64 px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            ></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button 
+            type="submit" 
+            class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+            Submit Blog
+        </button>
+    </form>
+</div>
+
+<!-- Include SimpleMDE -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script>
+    // Initialize SimpleMDE for the body field
+    var simplemde = new SimpleMDE({ element: document.getElementById("body") });
+    simplemde.codemirror.on("change", function(){
+        document.getElementById("body").value = simplemde.value();
+    });
+</script>
+{% endblock %}
