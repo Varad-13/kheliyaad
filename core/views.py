@@ -9,6 +9,12 @@ from .models import *
 def Home(request):
     return render(request, 'core/index.html')
 
+def Join(request):
+    if request.user.is_authenticated:
+        return render(request, 'core/join.html')
+    else:
+        return redirect('home')
+
 class Login(View):
     def get(self, request):
         if request.user.is_authenticated:

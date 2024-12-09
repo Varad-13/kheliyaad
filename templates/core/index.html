@@ -52,10 +52,10 @@
 </div>
 
 <div id="join" class="flex flex-col w-full text-xl items-center gap-4">
-    <div class="flex flex-col w-full flex-shrink-0 text-base xl:text-xl">
+    <a href="{% url 'join' %}" class="flex flex-col w-full flex-shrink-0 text-base xl:text-xl">
         <p class="w-full text-center font-serif-noto text-3xl md:text-5xl mb-3">Why Join Us</p>
         {% include 'landing/accordion.html' %}    
-    </div>
+    </a>
 </div>
 
 <div class="flex flex-col w-full text-xl items-center gap-4">
