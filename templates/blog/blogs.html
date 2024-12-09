@@ -4,21 +4,15 @@
 
 {% block content %}
 {% for blog in blogs %}
-    <a href="{% url 'blog' blog.id %}" class="flex md:flex-row flex-col max-w-4xl w-full p-4 gap-6 rounded-3xl border-2 border-gray-500 items-center justify-center md:items-start md:justify-start mt-2">
-        <img class="rounded-2xl h-full w-full md:w-48" src="{{blog.thumbnail.url}}" alt="{{ blog.title }}">
+    <a href="{% url 'blog' blog.id %}" class="flex md:flex-row flex-col max-w-4xl w-full p-4 gap-6 rounded-3xl border-2 border-gray-500 items-center justify-center md:items-center md:justify-start mt-2">
+        <img class="rounded-2xl h-full w-full md:w-auto md:w-1/2" src="{{blog.thumbnail.url}}" alt="{{ blog.title }}">
         <div>
-            <h1 class="text-6xl font-bold mb-4">{{ blog.title }}</h1>
+            <h1 class="text-4xl font-bold mb-4">{{ blog.title }}</h1>
             <h1 class="text-xl mb-4">{{ blog.summary }}</h1>
             <div class="text-sm text-gray-500">
                 <p>Created on: {{ blog.created_at|date:"F j, Y" }}</p>
                 <p>Last updated: {{ blog.last_updated|date:"F j, Y" }}</p>
             </div>
-            <p class="text-sm text-gray-500 mt-2">
-                Tags:
-                {% for tag in blog.tags.all %}
-                    <span >{{ tag.name }}</span>
-                {% endfor %}
-            </p>
         </div>
     </a>
 {% endfor %}
