@@ -7,7 +7,7 @@ class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True)
 
 class Blog(models.Model):
-    thumbnail = models.ImageField(upload_to='thumbnails/')
+    thumbnail = models.ImageField(upload_to='static/thumbnails/')
     title = models.TextField()
     summary = models.TextField()
     tags = models.ManyToManyField('Tag', related_name='blogs')
