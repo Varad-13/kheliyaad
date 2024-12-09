@@ -86,7 +86,7 @@
             </div>
             <div class="nav-item md:flex px-6 text-center items-center gap-6 font-medium lg:text-xl hidden text-black dark:text-white">
                 <a href="{% url 'home' %}" class="hover:underline">Home</a>
-                <a href="#" class="hover:underline">Blog</a>
+                <a href="{% url 'blogs' %}" class="hover:underline">Blog</a>
                 <a href="#" class="hover:underline">Gallery</a>
                 <a href="#" class="hover:underline">About Us</a>
                 {% if request.user.is_authenticated %}
@@ -112,7 +112,7 @@
             </div>
             <div class="flex flex-col px-10 text-left items-start gap-6 font-medium text-xl text-black dark:text-white">
                 <a href="{% url 'home' %}" class="hover:underline">Home</a>
-                <a href="#" class="hover:underline">Blog</a>
+                <a href="{% url 'blogs' %}" class="hover:underline">Blog</a>
                 <a href="#" class="hover:underline">Gallery</a>
                 <a href="#" class="hover:underline">About Us</a>
                 {% if request.user.is_authenticated %}

@@ -8,6 +8,11 @@ def BlogView(request, blogid):
     # Pass the blog object to the template
     return render(request, 'blog/blog.html', {'blog': blog})
 
+def Blogs(request):
+    blogs = Blog.objects.all()
+    # Pass the blog object to the template
+    return render(request, 'blog/blogs.html', {'blogs': blogs})
+
 # Create your views here.
 class AddBlog(View):
     def get(self, request):
