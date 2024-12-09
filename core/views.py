@@ -1,7 +1,10 @@
+from datetime import timedelta
+
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate, login, logout, password_validation
 from django.contrib import messages
 from django.shortcuts import render, redirect
+from django.utils import timezone
 from django.views import View
 from .models import *
 # Create your views here.
@@ -9,11 +12,28 @@ from .models import *
 def Home(request):
     return render(request, 'core/index.html')
 
-def Join(request):
-    if request.user.is_authenticated:
-        return render(request, 'core/join.html')
-    else:
-        return redirect('home')
+class Join(View):
+    def get(self, request):
+        if request.user.is_authenticated:
+            user = User.objects.get(id = request.user.id)
+            if hasattr(user, 'profile'):
+                if hasattr(user.profile, 'membership') and user.profile.membership.membership_status != "Active":
+                    return render(request, 'core/join.html')
+                return render(request, 'core/join.html')
+            else:
+                return redirect('home')
+        else:
+            return redirect('login')
+    def post(self, request):
+        user = User.objects.get(id = request.user.id)
+        upi_id = request.POST.get("txnid")
+        MembershipDetails.objects.create(
+            user=request.user.profile,
+            upi_transactionid = upi_id,
+            membership_status = "Verifying",
+            valid_until=timezone.now() + timedelta(days=30)
+        )
+        return redirect("join")
 
 class Login(View):
     def get(self, request):

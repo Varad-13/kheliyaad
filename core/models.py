@@ -12,8 +12,7 @@ class UserProfile(models.Model):
     pincode = models.CharField(max_length=10)
 
 class MembershipDetails(models.Model):
-    membershipId = models.CharField(max_length=6)
-    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name="membership")
+    user = models.OneToOneField(UserProfile, on_delete=models.CASCADE, related_name="membership")
     upi_transactionid = models.CharField(max_length=12)
     membership_status = models.CharField(max_length=10)
-    membership_photo = models.ImageField(upload_to="membership/")
+    valid_until = models.DateTimeField(auto_now_add=True)
