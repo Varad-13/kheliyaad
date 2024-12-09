@@ -5,7 +5,7 @@
 {% block content %}
 {% for blog in blogs %}
     <a href="{% url 'blog' blog.id %}" class="flex md:flex-row flex-col max-w-4xl w-full p-4 gap-6 rounded-3xl border-2 border-gray-500 items-center justify-center md:items-start md:justify-start mt-2">
-        <img class="rounded-2xl h-full w-full md:w-48" src="https://picsum.photos/200" alt="{{ blog.title }}">
+        <img class="rounded-2xl h-full w-full md:w-48" src="{{blog.thumbnail.file.url}}" alt="{{ blog.title }}">
         <div>
             <h1 class="text-6xl font-bold mb-4">{{ blog.title }}</h1>
             <h1 class="text-xl mb-4">{{ blog.summary }}</h1>
