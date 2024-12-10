@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %} Kheliyaad</title>
     <link rel="canonical" href="{% block canonical_url %}{{ request.build_absolute_uri }}{% endblock %}">
-    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dej3owk7z/image/upload/v1733460651/m1gx89g18zcmtw3pzfve.png">
+    <link rel="icon" type="image/x-icon" href="/static/assets/logo.png">
 
     <!-- Include Tailwind CSS -->
     <link rel="stylesheet" href="/static/css/output.css"/>
@@ -81,9 +81,9 @@
 
 <body class="flex flex-col w-full max-w-screen items-center dark:bg-gray-950 bg-gray-50 font-sans-noto dark:text-white">
     <div class="flex flex-col min-h-screen h-full w-full items-center justify-start gap-10 md:gap-24 max-w-7xl px-4" >
-        <nav class="nav flex self-center justify-self-center justify-between backdrop-blur-md text-white w-full xs:max-w-xs md:max-w-2xl lg:max-w-3xl xl:max-w-4xl md:rounded-full fixed bg-blue-500/60 border-gray-500 md:border-2 top-0 md:top-2 md:p-0 md:px-4 p-4">
+        <nav class="nav flex self-center justify-self-center justify-between backdrop-blur-md text-white w-full xs:max-w-xs md:max-w-2xl lg:max-w-3xl xl:max-w-4xl md:rounded-full fixed bg-blue-500/60 border-gray-500 md:border-2 top-0 md:top-2 md:p-0 md:px-4 mb-2 p-4">
             <div class="nav-item flex px-4 md:px-6 self-start invert dark:invert-0">
-                <img class="w-36 h-auto object-cover lg:w-48" src="https://res.cloudinary.com/dej3owk7z/image/upload/v1733460651/m1gx89g18zcmtw3pzfve.png">
+                <img class="w-36 h-auto object-cover lg:w-48" src="/static/assets/logo.png">
             </div>
             <div class="nav-item md:flex px-6 text-center items-center gap-6 font-medium lg:text-xl hidden text-black dark:text-white">
                 <a href="{% url 'home' %}" class="hover:underline">Home</a>
@@ -152,7 +152,7 @@
         <div class="w-full p-4 md:py-8">
             <div class="sm:flex sm:items-center sm:justify-between">
                 <a href="https://kheliyaad.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                    <img src="https://res.cloudinary.com/dej3owk7z/image/upload/v1733460651/m1gx89g18zcmtw3pzfve.png" class="h-16 md:px-2 invert dark:invert-0" alt="Kheliyaad Logo" />
+                    <img src="/static/assets/logo.png" class="h-16 md:px-2 invert dark:invert-0" alt="Kheliyaad Logo" />
                 </a>
                 <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                     <li>
