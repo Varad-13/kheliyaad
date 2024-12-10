@@ -7,7 +7,7 @@
     <h1 class="text-3xl md:text-6xl font-bold mb-6 w-full text-center">Gallery</h1>
     <div class="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 items-center justify-center">
         {% for image in images %}
-        <div class="flex w-full h-full aspect-square rounded-3xl hover:rounded-sm hover:cursor-pointer" style="background-image: url({{image.file.url}}); background-position: center; background-size: cover;">
+        <div class="flex w-full h-full aspect-square rounded-3xl hover:rounded-md transition-all duration-700" style="background-image: url({{image.file.url}}); background-position: center; background-size: cover;">
         </div>
         {% endfor %}
     </div>
