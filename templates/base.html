@@ -170,6 +170,27 @@
             <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://kheliyaad.com/" class="hover:underline">Kheliyaad</a>. All Rights Reserved.</span>
         </div>
     </footer>
+    <div id="imageModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
+        <div class="relative">
+            <button
+                class="absolute top-2 right-2 text-white text-2xl font-bold"
+                onclick="hideModal()">&times;</button>
+            <img id="modalImage" src="" alt="Large View" class="max-w-full max-h-screen rounded-lg shadow-lg">
+        </div>
+    </div>
+    <script>
+        function showModal(imageUrl) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageUrl; // Set the image URL
+            modal.classList.remove('hidden'); // Show the modal
+        }
+
+        function hideModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('hidden'); // Hide the modal
+        }
+    </script>
 </body>
 <script>
     const nav = document.querySelector('nav'); // Select the navbar

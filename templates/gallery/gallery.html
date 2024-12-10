@@ -7,7 +7,10 @@
     <h1 class="text-3xl md:text-6xl font-bold mb-6 w-full text-center">Gallery</h1>
     <div class="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 items-center justify-center">
         {% for image in images %}
-        <button class="flex w-full h-full aspect-square rounded-3xl focus:rounded-md hover:cursor-pointer hover:rounded-md transition-all duration-700" style="background-image: url({{image.file.url}}); background-position: center; background-size: cover;">
+        <button 
+        class="flex w-full h-full aspect-square rounded-3xl focus:rounded-md hover:cursor-pointer hover:rounded-md transition-all duration-700" 
+        style="background-image: url({{image.file.url}}); background-position: center; background-size: cover;"
+        onclick="showModal('{{ image.file.url }}')">
         </button>
         {% endfor %}
     </div>
