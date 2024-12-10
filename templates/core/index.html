@@ -41,12 +41,9 @@
         </a>
           
         <div class="flex md:w-1/2 h-96 grid grid-cols-3 gap-1">
-            <div class="bg-blue-700 rounded-3xl hover:cursor-pointer hover:ring-2 hover:ring-blue-500 bg-cover bg-center" style="background-image: url(https://kheliyaad.com/wp-content/uploads/2019/12/Gulli-Danda-510x287.jpg);"></div>
-            <div class="bg-blue-700 rounded-3xl hover:cursor-pointer hover:ring-2 hover:ring-blue-500 bg-cover bg-center" style="background-image: url(https://kheliyaad.com/wp-content/uploads/2019/12/Girls-kabaddi-India-510x338.jpg);"></div>
-            <div class="bg-blue-700 rounded-3xl hover:cursor-pointer hover:ring-2 hover:ring-blue-500 bg-cover bg-center" style="background-image: url(https://kheliyaad.com/wp-content/uploads/2019/12/kho-kho-510x268.jpg);"></div>
-            <div class="bg-blue-700 rounded-3xl hover:cursor-pointer hover:ring-2 hover:ring-blue-500 bg-cover bg-center" style="background-image: url(https://kheliyaad.com/wp-content/uploads/2019/12/hopscotch-hp-orig-510x340.jpg);"></div>
-            <div class="bg-blue-700 rounded-3xl hover:cursor-pointer hover:ring-2 hover:ring-blue-500 bg-cover bg-center" style="background-image: url(https://kheliyaad.com/wp-content/uploads/2019/12/ITGF-sack-race-510x229.jpg);"></div>
-            <div class="bg-blue-700 rounded-3xl hover:cursor-pointer hover:ring-2 hover:ring-blue-500 bg-cover bg-center" style="background-image: url(https://kheliyaad.com/wp-content/uploads/2019/12/maxresdefault-1-510x287.jpg);"></div>
+            {% for image in images %}
+            <div class="bg-blue-700 rounded-3xl hover:cursor-pointer hover:ring-2 hover:ring-blue-500 bg-cover bg-center" style="background-image: url({{image.file.url}});"></div>
+            {% endfor %}
         </div>
     </div>
 </div>
