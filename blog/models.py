@@ -15,6 +15,9 @@ class Blog(models.Model):
     body_html = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-last_updated']
     
     def save(self, *args, **kwargs):
         # If body_html is empty, generate it
