@@ -30,7 +30,7 @@ class Join(View):
             else:
                 return redirect('home')
         else:
-            return redirect('login')
+            return redirect('signup')
     def post(self, request):
         user = User.objects.get(id = request.user.id)
         upi_id = request.POST.get("txnid")
