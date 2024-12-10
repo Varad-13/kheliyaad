@@ -1217,6 +1217,10 @@ video {
   cursor: pointer;
 }
 
+.hover\:rounded-2xl:hover {
+  border-radius: 1rem;
+}
+
 .hover\:rounded-sm:hover {
   border-radius: 0.125rem;
 }
