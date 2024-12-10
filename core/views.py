@@ -7,10 +7,17 @@ from django.shortcuts import render, redirect
 from django.utils import timezone
 from django.views import View
 from .models import *
+from blog.models import *
+from gallery.models import *
 # Create your views here.
 
 def Home(request):
-    return render(request, 'core/index.html')
+    latest_blog = Blog.objects.latest('last_updated')
+    latest_images = Image.objects.order_by('-id')[:6]
+    context = {}
+    context["blog"] = latest_blog
+    context["images"] = latest_images
+    return render(request, 'core/index.html', context)
 
 class Join(View):
     def get(self, request):

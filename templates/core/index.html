@@ -31,11 +31,11 @@
 <div class="flex flex-col w-full text-xl items-center gap-4 ">
     <p class="w-full text-center font-serif-noto text-3xl md:text-5xl mb-3">Blogs & Gallery</p>
     <div class="flex md:flex-row flex-col-reverse w-full flex-shrink-0 text-base xl:text-xl gap-4">
-        <div class="flex md:w-1/2 items-center justify-center h-96 bg-blue-500 rounded-3xl shadow-lg overflow-hidden bg-cover bg-center hover:cursor-pointer" style="background-image: url('https://kheliyaad.com/wp-content/uploads/2019/12/img_0030-1.jpg');">
+        <div class="flex md:w-1/2 items-center justify-center h-96 bg-blue-500 rounded-3xl shadow-lg overflow-hidden bg-cover bg-center hover:cursor-pointer" style="background-image: url('{{blog.thumbnail.url}}'); background-position: center; background-size: cover;">
             <div class="p-4 bg-gray-900/50 w-full self-end backdrop-blur-sm">
-              <h2 class="text-xl font-semibold text-white mb-2">Blog Title</h2>
+              <h2 class="text-xl font-semibold text-white mb-2">{{blog.title}}</h2>
               <p class="text-gray-100 text-sm">
-                This is a short description or excerpt of the blog. Click the button below to read more.
+                {{blog.summary}}
               </p>
             </div>
           </div>
