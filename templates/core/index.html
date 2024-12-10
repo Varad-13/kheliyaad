@@ -42,7 +42,7 @@
           
         <div class="flex md:w-1/2 h-96 grid grid-cols-3 gap-1">
             {% for image in images %}
-            <div class="bg-blue-700 rounded-3xl hover:cursor-pointer bg-cover bg-center hover:rounded-2xl transition-all duration-700" style="background-image: url({{image.file.url}});"></div>
+            <div class="bg-blue-700 rounded-3xl hover:cursor-pointer bg-cover bg-center hover:rounded-md transition-all duration-700" style="background-image: url({{image.file.url}});"></div>
             {% endfor %}
         </div>
     </div>
