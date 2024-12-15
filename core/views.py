@@ -9,7 +9,6 @@ from django.views import View
 from .models import *
 from blog.models import *
 from gallery.models import *
-# Create your views here.
 
 def Home(request):
     latest_blog = Blog.objects.latest('last_updated')

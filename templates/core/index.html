@@ -29,7 +29,7 @@
 
 
 <div class="flex flex-col w-full text-xl items-center gap-4 ">
-    <p class="w-full text-center font-serif-noto text-3xl md:text-5xl mb-3">Blogs & Gallery</p>
+    <p class="w-full text-center font-serif-noto text-3xl md:text-5xl mb-3 text-blue-600 dark:text-blue-400">Blogs & Gallery</p>
     <div class="flex md:flex-row flex-col-reverse w-full flex-shrink-0 text-base xl:text-xl gap-4">
         <a href="{% url 'blog' blog.id %}" class="flex md:w-1/2 items-center justify-center h-96 bg-blue-500 rounded-3xl shadow-lg overflow-hidden bg-cover bg-center hover:cursor-pointer" style="background-image: url('{{blog.thumbnail.url}}'); background-position: center; background-size: cover;">
             <div class="p-4 bg-gray-900/50 w-full self-end backdrop-blur-sm">
@@ -53,7 +53,7 @@
 
 <div id="join" class="flex flex-col w-full text-xl items-center gap-4">
     <a class="flex flex-col w-full flex-shrink-0 text-base xl:text-xl">
-        <p class="w-full text-center font-serif-noto text-3xl md:text-5xl mb-3">Why Join Us</p>
+        <p class="w-full text-center font-serif-noto text-3xl md:text-5xl mb-3 text-blue-600 dark:text-blue-400">Why Join Us</p>
         {% include 'landing/accordion.html' %}    
     </a>
 </div>
