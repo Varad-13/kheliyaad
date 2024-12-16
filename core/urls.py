@@ -8,5 +8,6 @@ urlpatterns = [
     path('signup/', Signup.as_view(), name='signup'),
     path('join', Join.as_view(), name='join'),
     path('contact_us', Contact, name="contact"),
-    path('privacy_policy', Privacy, name="privacy")
+    path('privacy_policy', Privacy, name="privacy"),
+    path('rent_a_bike', Rent, name="rent")
 ]

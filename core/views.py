@@ -24,6 +24,9 @@ def Contact(request):
 def Privacy(request):
     return render(request, 'core/privacy.html')
 
+def Rent(request):
+    return render(request, 'core/rent_a_bike.html')
+
 class Join(View):
     def get(self, request):
         if request.user.is_authenticated:

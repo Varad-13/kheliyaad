@@ -18,6 +18,13 @@
     {% include 'landing/carousel.html' %}    
 </div>
 
+<!-- Floating Action Button -->
+<a href="{% url 'rent' %}" class="nav flex items-center justify-center fixed bottom-8 right-8 w-12 h-12 bg-blue-600 text-white p-4 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-blue-700">
+    <span class="material-symbols-outlined text-center">
+        directions_bike
+    </span>
+</a>
+
 <div class="flex w-full overflow-x-auto gap-4 p-2 justify-start grayscale hidden">
     <img class="w-48" src="https://kheliyaad.com/wp-content/uploads/2024/08/sponsor-sample.png">
     <img class="w-48" src="https://kheliyaad.com/wp-content/uploads/2024/08/sponsor-sample.png">
@@ -65,8 +72,6 @@
 <div class="flex flex-col w-full text-xl items-center gap-4">
     {% include 'landing/benefits.html' %}
 </div>
-
-
 
 <div class="flex flex-col w-full text-xl items-center gap-4">
     {% include 'landing/bmi_calculator.html' %}
