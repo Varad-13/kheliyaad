@@ -21,6 +21,9 @@ def Home(request):
 def Contact(request):
     return render(request, 'core/contact.html')
 
+def Privacy(request):
+    return render(request, 'core/privacy.html')
+
 class Join(View):
     def get(self, request):
         if request.user.is_authenticated:
