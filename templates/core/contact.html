@@ -1,92 +1,58 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="max-w-md w-full bg-gray-100 dark:bg-gray-900 p-8 shadow-md rounded-3xl border-2 border-gray-500">
+    <div class="max-w-2xl w-full bg-gray-100 dark:bg-gray-900 p-8 shadow-md rounded-3xl border-2 border-gray-500">
 
-        <h2 class="text-center text-3xl font-bold text-blue-900 dark:text-white mb-6">Contact Us</h2>
         
         <div class="space-y-4">
-            <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">Office Address (Haridwar):</h3>
-            <p class="text-gray-600 dark:text-gray-400">
-                Sai Leela Shah Bhawan<br>
-                Near Santshree Asharamjibapu Ashram<br>
-                Sapt Sarover Marg<br>
-                Haripur Kalan<br>
-                Haridwar, PIN: 249205
-            </p>
-
-            <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">Office Address (Mumbai):</h3>
-            <p class="text-gray-600 dark:text-gray-400">
-                V Mall, Ashanagar Thakur Complex<br>
-                Office No. 74, Ground Floor<br>
-                Western Express Highway<br>
-                Near Sai Dham Temple<br>
-                Kandivali East, Mumbai 400101
-            </p>
-
-            <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">Contact Numbers:</h3>
-            <ul class="text-gray-600 dark:text-gray-400">
-                <li>9322757104</li>
-                <li>9769642632</li>
-                <li>9167110711</li>
-            </ul>
-
-            <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">Email Addresses:</h3>
-            <ul class="text-gray-600 dark:text-gray-400">
-                <li>enquiry@kheliyaad.com</li>
-                <li>marketing@kheliyaad.com</li>
-                <li>sales@kheliyaad.com</li>
-                <li>admin@kheliyaad.com</li>
-                <li>purchase@kheliyaad.com</li>
-                <li>accounts@kheliyaad.com</li>
-            </ul>
-
-            <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">Get in Touch:</h3>
-            <form class="space-y-6" method="post">
-                {% csrf_token %}
+            <h2 class="text-center text-3xl font-bold text-blue-900 dark:text-white mb-6">Contact Us</h2>
+            <div class="grid grid-cols-2 w-full justify-between gap-8">
                 <div>
-                    <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Your Name</label>
-                    <input 
-                        id="name" 
-                        name="name" 
-                        type="text" 
-                        required 
-                        class="mt-1 block w-full px-3 py-2 border border-blue-300 text-gray-900 dark:border-blue-500 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500 sm:text-sm"
-                        placeholder="Type your name"
-                    />
+                    <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">Office Address (Haridwar):</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Sai Leela Shah Bhawan<br>
+                        Near Santshree Asharamjibapu Ashram<br>
+                        Sapt Sarover Marg<br>
+                        Haripur Kalan<br>
+                        Haridwar, PIN: 249205
+                    </p>
                 </div>
                 <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Your Email</label>
-                    <input 
-                        id="email" 
-                        name="email" 
-                        type="email" 
-                        required 
-                        class="mt-1 block w-full px-3 py-2 border border-blue-300 text-gray-900 dark:border-blue-500 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500 sm:text-sm"
-                        placeholder="Type your email"
-                    />
+                    <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">Office Address (Mumbai):</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        V Mall, Ashanagar Thakur Complex<br>
+                        Office No. 74, Ground Floor<br>
+                        Western Express Highway<br>
+                        Near Sai Dham Temple<br>
+                        Kandivali East, Mumbai 400101
+                    </p>
                 </div>
                 <div>
-                    <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Your Message</label>
-                    <textarea 
-                        id="message" 
-                        name="message" 
-                        rows="4" 
-                        required 
-                        class="mt-1 block w-full px-3 py-2 border border-blue-300 text-gray-900 dark:border-blue-500 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500 sm:text-sm"
-                        placeholder="Type your message here"
-                    ></textarea>
+                    <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">Contact Numbers:</h3>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li><a href="tel:+919322757104" class="text-blue-600 hover:underline dark:text-blue-400">+91 9322757104</a></li>
+                        <li><a href="tel:+919769642632" class="text-blue-600 hover:underline dark:text-blue-400">+91 9769642632</a></li>
+                        <li><a href="tel:+919167110711" class="text-blue-600 hover:underline dark:text-blue-400">+91 9167110711</a></li>
+                    </ul>
                 </div>
                 <div>
-                    <button 
-                        type="submit" 
-                        class="w-full flex justify-center py-2 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-blue-700 dark:hover:bg-blue-600"
-                    >
-                        Send Message
-                    </button>
+                    <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">Email Addresses:</h3>
+                    <ul class="text-gray-600 dark:text-gray-400">
+                        <li><a href="mailto:enquiry@kheliyaad.com" class="text-blue-600 hover:underline dark:text-blue-400">enquiry@kheliyaad.com</a></li>
+                        <li><a href="mailto:marketing@kheliyaad.com" class="text-blue-600 hover:underline dark:text-blue-400">marketing@kheliyaad.com</a></li>
+                        <li><a href="mailto:sales@kheliyaad.com" class="text-blue-600 hover:underline dark:text-blue-400">sales@kheliyaad.com</a></li>
+                        <li><a href="mailto:admin@kheliyaad.com" class="text-blue-600 hover:underline dark:text-blue-400">admin@kheliyaad.com</a></li>
+                        <li><a href="mailto:purchase@kheliyaad.com" class="text-blue-600 hover:underline dark:text-blue-400">purchase@kheliyaad.com</a></li>
+                        <li><a href="mailto:accounts@kheliyaad.com" class="text-blue-600 hover:underline dark:text-blue-400">accounts@kheliyaad.com</a></li>
+                    </ul>
                 </div>
-            </form>
+            </div>
+           
+            
+
+            
         </div>
         
+
     </div>
 {% endblock %}
