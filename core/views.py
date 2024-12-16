@@ -18,7 +18,7 @@ def Home(request):
     context["images"] = latest_images
     return render(request, 'core/index.html', context)
 
-def Index(request):
+def Contact(request):
     return render(request, 'core/contact.html')
 
 class Join(View):
