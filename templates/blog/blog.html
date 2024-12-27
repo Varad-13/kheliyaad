@@ -4,8 +4,8 @@
     <meta name="description" content="{{blog.summary}}">
 
     <meta name="keywords" content="
-        {% for tag in blog.tags %}
-        tag ,
+        {% for tag in blog.tags.all %}
+        {{tag}} ,
         {% endfor %}
     ">
 {% endblock %}
