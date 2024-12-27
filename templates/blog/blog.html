@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 
+{% block extra_head %}
+    <meta name="description" content="{{blog.summary}}">
+
+    <meta name="keywords" content="
+        {% for tag in blog.tags %}
+        tag ,
+        {% endfor %}
+    ">
+{% endblock %}
+
 {% block title %}{{ blog.title }}{% endblock %}
 
 {% block content %}
