@@ -85,37 +85,31 @@
 
 <body class="flex flex-col w-full max-w-screen items-center dark:bg-gray-950 bg-gray-50 font-sans-noto dark:text-white">
     <div class="flex flex-col min-h-screen h-full w-full items-center justify-start gap-10 md:gap-24 max-w-7xl px-4" >
-        <nav class="nav flex self-center justify-self-center items-center justify-center backdrop-blur-md text-white w-full fixed bg-blue-600/75 dark:bg-blue-500/75 border-gray-500 md:border-2 top-0 md:p-0 mb-2 p-4">
-            <div class="flex flex-row justify-between gap-2 px-4 md:px-8 md:mb-2 md:flex-col md:max-w-screen-lg w-full">
-                <a href="{% url 'home' %}" class="nav-item flex self-start">
-                    <img class="w-36 h-auto object-cover lg:w-48" src="/static/assets/logo.png" alt="logo">
-                </a>
-                <div class="nav-item md:flex md:flex-row w-full justify-between text-center font-medium lg:text-xl hidden text-white">
-                    <div class="md:flex items-center gap-6">
-                        <a href="{% url 'home' %}" class="hover:underline">Home</a>
-                        <a href="{% url 'blogs' %}" class="hover:underline">Blog</a>
-                        <a href="{% url 'gallery' %}" class="hover:underline">Gallery</a>
-                        <a href="{% url 'join' %}" class="hover:underline">Join Us</a>
-                        
-                    </div>
-                        {% if request.user.is_authenticated %}
-                        <a href="{% url 'logout' %}" class="hover:underline">Log Out</a>
-                        {% else %}
-                        <a href="{% url 'login' %}" class="hover:underline">Login</a>
-                        {% endif %}
-                </div>
-                <button id="hamburger" onclick="toggleNav()" class="nav-item flex text-center items-center gap-6 font-medium lg:text-xl md:hidden text-white">
-                    <span class="material-symbols-outlined">
-                        menu
-                    </span>
-                </button>
-                <button id="close" onclick="toggleNav()" class="nav-item flex text-center items-center gap-6 font-medium lg:text-xl hidden md:hidden text-white">
-                    <span class="material-symbols-outlined">
-                        close
-                    </span>
-                </button>
+        <nav class="nav flex self-center justify-self-center justify-between backdrop-blur-md text-white w-full xs:max-w-xs md:max-w-2xl lg:max-w-3xl xl:max-w-4xl md:rounded-full fixed bg-blue-600/75 dark:bg-blue-500/75 border-gray-500 md:border-2 top-0 md:top-2 md:p-0 md:px-4 mb-2 p-4">
+            <a href="{% url 'home' %}" class="nav-item flex px-4 md:px-6 self-start">
+                <img class="w-36 h-auto object-cover lg:w-48" src="/static/assets/logo.png" alt="logo">
+            </a>
+            <div class="nav-item md:flex px-6 text-center items-center gap-6 font-medium lg:text-xl hidden text-white">
+                <a href="{% url 'home' %}" class="hover:underline">Home</a>
+                <a href="{% url 'blogs' %}" class="hover:underline">Blog</a>
+                <a href="{% url 'gallery' %}" class="hover:underline">Gallery</a>
+                <a href="{% url 'join' %}" class="hover:underline">Join Us</a>
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="hover:underline">Log Out</a>
+                {% else %}
+                <a href="{% url 'login' %}" class="hover:underline">Login</a>
+                {% endif %}
             </div>
-            
+            <button id="hamburger" onclick="toggleNav()" class="nav-item flex px-6 text-center items-center gap-6 font-medium lg:text-xl md:hidden text-white">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+            </button>
+            <button id="close" onclick="toggleNav()" class="nav-item flex px-6 text-center items-center gap-6 font-medium lg:text-xl hidden md:hidden text-white">
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+            </button>
         </nav>
         <div id="nav_mobile" class="nav_mob flex flex-col gap-8 w-full h-full hidden md:hidden fixed top-0 backdrop-blur-md bg-gray-200/60 dark:bg-gray-900/80">
             <div class="h-16 mb-4 flex items-end">
