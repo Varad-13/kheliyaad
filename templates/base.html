@@ -85,13 +85,13 @@
 
 <body class="flex flex-col w-full max-w-screen items-center dark:bg-gray-950 bg-gray-50 font-sans-noto dark:text-white">
     <div class="flex flex-col min-h-screen h-full w-full items-center justify-start gap-10 md:gap-24 max-w-7xl px-4" >
-        <nav class="nav flex self-center justify-self-center items-center justify-center backdrop-blur-md text-white w-full fixed bg-blue-600/75 dark:bg-blue-500/75 border-gray-500 md:border-2 top-0 md:p-0 md:px-24 mb-2 p-4">
-            <div class="flex flex-row justify-between gap-2 md:mb-2 md:flex-col md:max-w-screen-lg w-full">
-                <a href="{% url 'home' %}" class="nav-item flex px-4 md:px-6 self-start">
+        <nav class="nav flex self-center justify-self-center items-center justify-center backdrop-blur-md text-white w-full fixed bg-blue-600/75 dark:bg-blue-500/75 border-gray-500 md:border-2 top-0 md:p-0 mb-2 p-4">
+            <div class="flex flex-row justify-between gap-2 px-4 md:px-8 md:mb-2 md:flex-col md:max-w-screen-lg w-full">
+                <a href="{% url 'home' %}" class="nav-item flex self-start">
                     <img class="w-36 h-auto object-cover lg:w-48" src="/static/assets/logo.png" alt="logo">
                 </a>
                 <div class="nav-item md:flex md:flex-row w-full justify-between text-center font-medium lg:text-xl hidden text-white">
-                    <div class="md:flex px-6 items-center gap-6">
+                    <div class="md:flex items-center gap-6">
                         <a href="{% url 'home' %}" class="hover:underline">Home</a>
                         <a href="{% url 'blogs' %}" class="hover:underline">Blog</a>
                         <a href="{% url 'gallery' %}" class="hover:underline">Gallery</a>
@@ -104,12 +104,12 @@
                         <a href="{% url 'login' %}" class="hover:underline">Login</a>
                         {% endif %}
                 </div>
-                <button id="hamburger" onclick="toggleNav()" class="nav-item flex px-6 text-center items-center gap-6 font-medium lg:text-xl md:hidden text-white">
+                <button id="hamburger" onclick="toggleNav()" class="nav-item flex text-center items-center gap-6 font-medium lg:text-xl md:hidden text-white">
                     <span class="material-symbols-outlined">
                         menu
                     </span>
                 </button>
-                <button id="close" onclick="toggleNav()" class="nav-item flex px-6 text-center items-center gap-6 font-medium lg:text-xl hidden md:hidden text-white">
+                <button id="close" onclick="toggleNav()" class="nav-item flex text-center items-center gap-6 font-medium lg:text-xl hidden md:hidden text-white">
                     <span class="material-symbols-outlined">
                         close
                     </span>
