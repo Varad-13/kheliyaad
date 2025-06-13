@@ -11,11 +11,20 @@ from blog.models import *
 from gallery.models import *
 
 def Home(request):
-    latest_blog = Blog.objects.latest('last_updated')
-    latest_images = Image.objects.order_by('-id')[:6]
     context = {}
-    context["blog"] = latest_blog
-    context["images"] = latest_images
+
+    try:
+        latest_blog = Blog.objects.latest('last_updated')
+        context["blog"] = latest_blog
+    except Blog.DoesNotExist:
+        pass
+
+    try:
+        latest_images = Image.objects.order_by('-id')[:6]
+        context["images"] = latest_images
+    except Exception:
+        context["images"] = []
+
     return render(request, 'core/index.html', context)
 
 def Contact(request):
