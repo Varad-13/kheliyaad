@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-n&41m&zi)!(@&f*v^)3&$8-y6g&gv#&y4(0lb4*t&nzer)4fv4
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
+CSRF_TRUSTED_ORIGINS = ['https://kheliyaad.onrender.com', 'https://kheliyaad.com', 'https://www.kheliyaad.com']
 
 # Application definition
 
@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
